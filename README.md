@@ -1,1 +1,1 @@
-#### [GitHub Pages](https://inquisitive-piroshki-272d1b.netlify.app/)
+#### [live Demo](https://inquisitive-piroshki-272d1b.netlify.app/)
