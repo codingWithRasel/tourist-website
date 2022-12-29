@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Tourist Web Site</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comforter+Brush&family=Heebo:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: hsl(0, 0%, 95%);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: hsl(0, 0%, 80%);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: hsl(0, 0%, 70%);
+      }
+    </style>
+  </head>
+  <body class="font-ff-heebo">
+    <header
+      id="header"
+      class="max-h-[88px] bg-viridian-green py-[20px] text-white-1 transition-all duration-300"
+    >
+      <!-- header_contaienr -->
+      <div
+        class="container mx-auto flex flex-wrap items-center justify-between px-[1.5rem]"
+      >
+        <!-- logo bar -->
+        <a href="#" class="text-fs-2 font-semibold leading-[48px] lap:text-fs-1"
+          >Tourest</a
+        >
+        <!-- toggle Bar -->
+        <button onclick="handleBars()" class="text-5xl lap:hidden">
+          <ion-icon id="bars" name="menu"></ion-icon>
+        </button>
+        <!-- Nav bar -->
+        <nav
+          id="nav"
+          class="invisible flex shrink-0 grow basis-full flex-col gap-[15px] px-[10px] py-[20px] opacity-0 transition-all duration-[.25s] ease-in-out lap:visible lap:grow-0 lap:basis-auto lap:flex-row lap:p-0 lap:opacity-100"
+        >
+          <ul class="text-fs-5 font-medium lap:flex lap:gap-[4rem]">
+            <li>
+              <a class="nav_item" href="#">Home</a>
+            </li>
+            <li>
+              <a class="nav_item" href="#about">About Us</a>
+            </li>
+            <li>
+              <a class="nav_item" href="#tours">Tours</a>
+            </li>
+            <li>
+              <a class="nav_item" href="#destinations">Destinations</a>
+            </li>
+            <li>
+              <a class="nav_item" href="#blogs">Blog</a>
+            </li>
+            <li>
+              <a class="nav_item" href="#contact">Contact Us</a>
+            </li>
+          </ul>
+          <button
+            class="btn w-fit bg-white-1 text-viridian-green hover:border-white-1 hover:bg-transparent hover:text-white-1 focus:border-white-1 focus:bg-transparent focus:text-white-1"
+          >
+            Booking Now
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!--=========================
+        Hero section
+         =================-->
+      <section
+        class="relative grid place-items-center py-[4rem] tab:min-h-[55rem] lap:min-h-[68rem] lap:py-[6rem]"
+      >
+        <div
+          class="container mx-auto items-center gap-[4rem] px-[15px] tab:flex"
+        >
+          <div
+            class="absolute top-[60px] left-[46%] hidden animate-spin-slow desk:block"
+          >
+            <img src="../images/shape-1.png" alt="shape" />
+          </div>
+          <div
+            class="absolute top-[20%] right-[50px] hidden animate-spin-slow desk:block"
+          >
+            <img src="../images/shape-2.png" alt="shape" />
+          </div>
+          <div
+            class="absolute bottom-[20%] left-[40%] hidden animate-spin-slow desk:block"
+          >
+            <img src="../images/shape-3.png" alt="shape" />
+          </div>
+          <!-- left  -->
+          <div class="mb-[5rem]">
+            <p
+              class="mb-[15px] font-ff-comforter-brush text-[3rem] leading-[56px] text-mikado-yellow mob:text-[4rem] lap:text-[4.4rem]"
+            >
+              Explore Your Travel
+            </p>
+            <h2
+              class="mb-15 max-w-[11ch] font-ff-abril-fatface text-[3.4rem] leading-[1.2] mob:text-[5rem] desk:text-[6rem]"
+            >
+              Trusted Travel Agency
+            </h2>
+            <p
+              class="mb-15 text-[1.4rem] leading-[1.7] text-black-coral mob:text-[1.8rem]"
+            >
+              I travel not to go anywhere, but to go. I travel for travel's sake
+              the great affair is to move.
+            </p>
+            <div class="flex gap-[1.5rem]">
+              <button
+                class="btn bg-viridian-green text-white-2 hover:border-viridian-green hover:bg-transparent hover:text-viridian-green focus:border-viridian-green focus:bg-transparent focus:text-viridian-green"
+              >
+                Contact Us
+              </button>
+              <button
+                class="btn border-silver-chalice hover:border-viridian-green hover:text-viridian-green focus:border-viridian-green focus:text-viridian-green"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          <!-- right  -->
+          <figure>
+            <img src="../images/hero-banner.png" alt="hero-banner" />
+          </figure>
+        </div>
+      </section>
+      <!-- =========================
+        Destination Section
+      ============================== -->
+      <section class="py-[4rem] lap:py-[6rem]" id="destinations">
+        <div class="container mx-auto px-[15px]">
+          <p
+            class="text-center font-ff-comforter-brush text-[3rem] leading-[56px] text-mikado-yellow mob:text-[4rem] lap:text-[4.4rem]"
+          >
+            Destination
+          </p>
+          <h3
+            class="mb-[5rem] text-center font-ff-abril-fatface text-[3.4rem] leading-[56px] mob:text-[5rem]"
+          >
+            Choose Your Place
+          </h3>
+          <!-- flex container -->
+          <div class="flex flex-wrap gap-[3rem]">
+            <div
+              class="group overflow-hidden rounded-md tab:w-[calc(50%-15px)]"
+            >
+              <a
+                href="#"
+                class="relative block overflow-hidden after:absolute after:inset-0 after:z-0 after:bg-oxford-blue/30 after:content-['']"
+                ><figure class="block">
+                  <img
+                    class="block w-full object-cover transition duration-300 group-hover:scale-110 group-focus:scale-105"
+                    src="../images/destination-1.jpg"
+                    alt="destination "
+                  />
+                </figure>
+                <div class="absolute inset-0 top-auto z-40 p-[3rem]">
+                  <p
+                    class="font-ff-comforter-brush text-3xl text-mikado-yellow"
+                  >
+                    Male
+                  </p>
+                  <h3 class="font-ff-abril-fatface text-4xl text-white-1">
+                    Maldives
+                  </h3>
+                </div>
+              </a>
+            </div>
+            <div
+              class="group overflow-hidden rounded-md tab:w-[calc(50%-15px)]"
+            >
+              <a
+                href="#"
+                class="relative block overflow-hidden after:absolute after:inset-0 after:z-0 after:bg-oxford-blue/30 after:content-['']"
+                ><figure class="block">
+                  <img
+                    class="block w-full object-cover transition duration-300 group-hover:scale-110 group-focus:scale-105"
+                    src="../images/destination-2.jpg"
+                    alt="destination "
+                  />
+                </figure>
+                <div class="absolute inset-0 top-auto z-40 p-[3rem]">
+                  <p
+                    class="font-ff-comforter-brush text-3xl text-mikado-yellow"
+                  >
+                    Male
+                  </p>
+                  <h3 class="font-ff-abril-fatface text-4xl text-white-1">
+                    Maldives
+                  </h3>
+                </div>
+              </a>
+            </div>
+            <div
+              class="group overflow-hidden rounded-md tab:w-[calc(33%-20px)]"
+            >
+              <a
+                href="#"
+                class="relative block overflow-hidden after:absolute after:inset-0 after:z-0 after:bg-oxford-blue/30 after:content-['']"
+                ><figure class="block">
+                  <img
+                    class="block w-full object-cover transition duration-300 group-hover:scale-110 group-focus:scale-105"
+                    src="../images/destination-3.jpg"
+                    alt="destination "
+                  />
+                </figure>
+                <div class="absolute inset-0 top-auto z-40 p-[3rem]">
+                  <p
+                    class="font-ff-comforter-brush text-3xl text-mikado-yellow"
+                  >
+                    Male
+                  </p>
+                  <h3 class="font-ff-abril-fatface text-4xl text-white-1">
+                    Maldives
+                  </h3>
+                </div>
+              </a>
+            </div>
+            <div
+              class="group overflow-hidden rounded-md tab:w-[calc(33%-20px)]"
+            >
+              <a
+                href="#"
+                class="relative block overflow-hidden after:absolute after:inset-0 after:z-0 after:bg-oxford-blue/30 after:content-['']"
+                ><figure class="block">
+                  <img
+                    class="block w-full object-cover transition duration-300 group-hover:scale-110 group-focus:scale-105"
+                    src="../images/destination-4.jpg"
+                    alt="destination "
+                  />
+                </figure>
+                <div class="absolute inset-0 top-auto z-40 p-[3rem]">
+                  <p
+                    class="font-ff-comforter-brush text-3xl text-mikado-yellow"
+                  >
+                    Male
+                  </p>
+                  <h3 class="font-ff-abril-fatface text-4xl text-white-1">
+                    Maldives
+                  </h3>
+                </div>
+              </a>
+            </div>
+            <div
+              class="group overflow-hidden rounded-md tab:w-[calc(33%-20px)]"
+            >
+              <a
+                href="#"
+                class="relative block overflow-hidden after:absolute after:inset-0 after:z-0 after:bg-oxford-blue/30 after:content-['']"
+                ><figure class="block">
+                  <img
+                    class="block w-full object-cover transition duration-300 group-hover:scale-110 group-focus:scale-105"
+                    src="../images/destination-5.jpg"
+                    alt="destination "
+                  />
+                </figure>
+                <div class="absolute inset-0 top-auto z-40 p-[3rem]">
+                  <p
+                    class="font-ff-comforter-brush text-3xl text-mikado-yellow"
+                  >
+                    Male
+                  </p>
+                  <h3 class="font-ff-abril-fatface text-4xl text-white-1">
+                    Maldives
+                  </h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--=========================
+         Featured Tours section
+      ==========================-->
+      <section class="py-[4rem] lap:py-[6rem]" id="tours">
+        <div class="container mx-auto px-[15px]">
+          <p
+            class="text-center font-ff-comforter-brush text-[3rem] leading-[56px] text-mikado-yellow mob:text-[4rem] lap:text-[4.4rem]"
+          >
+            Featured Tours
+          </p>
+          <h2
+            class="mb-[5rem] text-center font-ff-abril-fatface text-[3.4rem] leading-[56px] mob:text-[5rem]"
+          >
+            Most Popular Tours
+          </h2>
+          <!-- featured container div -->
+          <div class="grid gap-[3rem] tab:grid-cols-2 lap:grid-cols-3">
+            <!-- single featured div -->
+            <div class="rounded-md shadow-md">
+              <figure class="relative">
+                <a href="#"
+                  ><img
+                    src="../images/popular-1.jpg"
+                    alt="popular"
+                    class="block"
+                /></a>
+                <span
+                  class="absolute top-4 left-4 inline-flex flex-col items-center justify-center rounded-lg bg-mikado-yellow p-6 font-extrabold text-white-1"
+                >
+                  <ion-icon
+                    name="time-outline"
+                    class="text-3xl"
+                    role="img"
+                  ></ion-icon>
+                  <time>12 Days</time>
+                </span>
+              </figure>
+              <div class="py-[30px] px-[15px]">
+                <div class="text-2xl font-bold text-white-1">
+                  <span class="mr-6 rounded-lg bg-viridian-green p-2"
+                    >From $50:00</span
+                  >
+                  <span class="rounded-lg bg-mikado-yellow p-2">
+                    <ion-icon name="star" role="img"></ion-icon>
+                    <ion-icon name="star" role="img"></ion-icon>
+                    <ion-icon name="star" role="img"></ion-icon>
+                    <ion-icon name="star" role="img"></ion-icon>
+                    <ion-icon name="star-outline" role="img"></ion-icon>
+                    <data class="font-normal" data-="2">(2)</data>
+                  </span>
+                </div>
+                <h3
+                  class="my-10 cursor-pointer text-3xl font-bold text-granite-gray hover:text-viridian-green"
+                >
+                  A good traveler has no fiexed plans and is not intent on
+                  arriving.
+                </h3>
+                <address class="text-[1.7rem] not-italic text-silver-chalice">
+                  Kuala Lumpur, Malaysia
+                </address>
+              </div>
+            </div>
+            <!-- single featured div -->
+            <div class="shadow-md">
+              <figure class="relative">
+                <a href="#"
+                  ><img
+                    src="../images/popular-2.jpg"
+                    alt="popular"
+                    class="block"
+                /></a>
+                <span
+                  class="absolute top-4 left-4 inline-flex flex-col items-center justify-center rounded-lg bg-mikado-yellow p-6 font-extrabold text-white-1"
+                >
+                  <ion-icon
+                    name="time-outline"
+                    class="text-3xl"
+                    role="img"
+                  ></ion-icon>
+                  <time>12 Days</time>
+                </span>
+              </figure>
+              <div class="py-[30px] px-[15px]">
+                <div class="text-2xl font-bold text-white-1">
+                  <span class="mr-6 rounded-lg bg-viridian-green p-2"
+                    >From $50:00</span
+                  >
+                  <span class="rounded-lg bg-mikado-yellow p-2">
+                    <ion-icon name="star" role="img"></ion-icon>
+                    <ion-icon name="star" role="img"></ion-icon>
+                    <ion-icon name="star" role="img"></ion-icon>
+                    <ion-icon name="star" role="img"></ion-icon>
+                    <ion-icon name="star-outline" role="img"></ion-icon>
+                    <data class="font-normal" data-="2">(2)</data>
+                  </span>
+                </div>
+                <h3
+                  class="my-10 cursor-pointer text-3xl font-bold text-granite-gray hover:text-viridian-green"
+                >
+                  A good traveler has no fiexed plans and is not intent on
+                  arriving.
+                </h3>
+                <address class="text-[1.7rem] not-italic text-silver-chalice">
+                  Kuala Lumpur, Malaysia
+                </address>
+              </div>
+            </div>
+            <!-- single featured div -->
+            <div class="shadow-md">
+              <figure class="relative">
+                <a href="#">
+                  <img
+                    src="../images/popular-3.jpg"
+                    alt="popular"
+                    class="block"
+                  />
+                </a>
+                <span
+                  class="absolute top-4 left-4 inline-flex flex-col items-center justify-center rounded-lg bg-mikado-yellow p-6 font-extrabold text-white-1"
+                >
+                  <ion-icon
+                    name="time-outline"
+                    class="text-3xl"
+                    role="img"
+                  ></ion-icon>
+                  <time>12 Days</time>
+                </span>
+              </figure>
+              <div class="py-[30px] px-[15px]">
+                <div class="text-2xl font-bold text-white-1">
+                  <span class="mr-6 rounded-lg bg-viridian-green p-2"
+                    >From $50:00</span
+                  >
+                  <span class="rounded-lg bg-mikado-yellow p-2">
+                    <ion-icon name="star" role="img"></ion-icon>
+                    <ion-icon name="star" role="img"></ion-icon>
+                    <ion-icon name="star" role="img"></ion-icon>
+                    <ion-icon name="star" role="img"></ion-icon>
+                    <ion-icon name="star-outline" role="img"></ion-icon>
+                    <data class="font-normal" data-="2">(2)</data>
+                  </span>
+                </div>
+                <h3
+                  class="my-10 cursor-pointer text-3xl font-bold text-granite-gray hover:text-viridian-green"
+                >
+                  A good traveler has no fiexed plans and is not intent on
+                  arriving.
+                </h3>
+                <address class="text-[1.7rem] not-italic text-silver-chalice">
+                  Kuala Lumpur, Malaysia
+                </address>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--=========================
+         About section
+      ==========================-->
+      <section class="py-[4rem] lap:py-[6rem]" id="about">
+        <div
+          class="container mx-auto grid items-center gap-[3rem] px-[1.5rem] lap:grid-cols-[0.8fr_1fr] desk:grid-cols-[0.7fr_1fr]"
+        >
+          <!--about left -->
+          <div>
+            <p
+              class="mb-[10px] font-ff-comforter-brush text-[3rem] leading-[56px] text-mikado-yellow mob:text-[4rem] lap:text-[4.4rem]"
+            >
+              About Us
+            </p>
+            <h2
+              class="mb-[20px] font-ff-abril-fatface text-[3rem] font-medium leading-[1.367] mob:text-[4rem] lap:text-[4.4rem]"
+            >
+              Explore all tour of the world with us.
+            </h2>
+            <p class="mb-[3rem] text-[1.7rem] leading-[1.7] text-black-coral">
+              Lorem Ipsum available, but the majority have suffered alteration
+              in some form, by injected humour, or randomised words which don't
+              look even slightly believable.
+            </p>
+            <ul class="mb-[4rem] grid gap-[2rem]">
+              <li class="flex items-start gap-[15px]">
+                <div>
+                  <ion-icon
+                    class="rounded-full bg-viridian-green p-[16px] text-[2.6rem] text-white"
+                    name="compass"
+                    role="img"
+                  ></ion-icon>
+                </div>
+                <div>
+                  <h3
+                    class="font mb-[.5rem] text-[2.4rem] font-semibold leading-[1.45] text-granite-gray"
+                  >
+                    Tour guide
+                  </h3>
+                  <p class="text-[1.7rem] leading-[1.64] text-black-coral">
+                    Lorem Ipsum available, but the majority have suffered
+                    alteration in some.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-[15px]">
+                <div>
+                  <ion-icon
+                    class="rounded-full bg-viridian-green p-[16px] text-[2.6rem] text-white"
+                    name="briefcase"
+                    role="img"
+                  ></ion-icon>
+                </div>
+                <div>
+                  <h3
+                    class="font mb-[.5rem] text-[2.4rem] font-semibold leading-[1.45] text-granite-gray"
+                  >
+                    Friendly price
+                  </h3>
+                  <p class="text-[1.7rem] leading-[1.64] text-black-coral">
+                    Lorem Ipsum available, but the majority have suffered
+                    alteration in some.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-[15px]">
+                <div>
+                  <ion-icon
+                    class="rounded-full bg-viridian-green p-[16px] text-[2.6rem] text-white"
+                    name="umbrella"
+                    role="img"
+                  ></ion-icon>
+                </div>
+                <div>
+                  <h3
+                    class="font mb-[.5rem] text-[2.4rem] font-semibold leading-[1.45] text-granite-gray"
+                  >
+                    Reliable tour
+                  </h3>
+                  <p class="text-[1.7rem] leading-[1.64] text-black-coral">
+                    Lorem Ipsum available, but the majority have suffered
+                    alteration in some.
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <button
+              class="btn bg-viridian-green text-white-2 hover:border-viridian-green hover:bg-transparent hover:text-viridian-green focus:border-viridian-green focus:bg-transparent focus:text-viridian-green"
+            >
+              Booking Now
+            </button>
+          </div>
+          <!--about right -->
+          <div>
+            <figure>
+              <img src="../images/about-banner.png" alt="about banner" />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <!--=========================
+         Blogs section
+      ==========================-->
+      <section class="py-[4rem] lap:py-[6rem] lap:pb-[100px]" id="blogs">
+        <div class="container mx-auto px-[15px]">
+          <p
+            class="mb-[10px] text-center font-ff-comforter-brush text-[3rem] leading-[56px] text-mikado-yellow mob:text-[4rem] lap:text-[4.4rem]"
+          >
+            From The Blog Post
+          </p>
+          <h2
+            class="mb-[50px] text-center font-ff-abril-fatface text-[3rem] font-medium leading-[1.367] mob:text-[4rem] lap:text-[4.4rem]"
+          >
+            Latest News & Articles
+          </h2>
+          <!-- Blogs Container -->
+          <div class="grid gap-[30px] tab:grid-cols-2 lap:grid-cols-3">
+            <!-- single Blog -->
+            <div class="shadow-lg">
+              <a class="relative" href="#">
+                <figure>
+                  <img src="../images/blog-2.jpg" alt="blogs" />
+                </figure>
+                <span
+                  class="absolute top-4 left-4 inline-flex flex-col items-center rounded-lg bg-mikado-yellow p-6 font-extrabold text-white-1"
+                >
+                  <ion-icon
+                    name="time-outline"
+                    class="text-3xl"
+                    role="img"
+                  ></ion-icon>
+                  <time>12 Days</time>
+                </span>
+              </a>
+              <div class="px-[15px] py-[30px]">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-5">
+                    <figure>
+                      <img
+                        class="h-[3rem] w-[3rem]"
+                        src="../images/author-avatar.png"
+                        alt="author"
+                      />
+                    </figure>
+                    <div>
+                      <a class="font-medium text-granite-gray" href="#"
+                        >Jony bristow</a
+                      >
+                      <p class="text-spanish-gray">Admin</p>
+                    </div>
+                  </div>
+                  <time class="text-spanish-gray">10:30 AM</time>
+                </div>
+                <h3
+                  class="my-[2rem] text-3xl font-bold text-granite-gray hover:text-viridian-green"
+                >
+                  A good traveler has no fixed plans and is not intent or
+                  arriving.
+                </h3>
+                <a
+                  class="flex items-center justify-end gap-2 text-3xl font-semibold text-viridian-green hover:text-inherit"
+                  href="#"
+                  ><span>Read More</span>
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+              </div>
+            </div>
+            <!-- single Blog -->
+            <div class="shadow-lg">
+              <a class="relative" href="#">
+                <figure>
+                  <img src="../images/popular-1.jpg" alt="blogs" />
+                </figure>
+                <span
+                  class="absolute top-4 left-4 inline-flex flex-col items-center rounded-lg bg-mikado-yellow p-6 font-extrabold text-white-1"
+                >
+                  <ion-icon
+                    name="time-outline"
+                    class="text-3xl"
+                    role="img"
+                  ></ion-icon>
+                  <time>12 Days</time>
+                </span>
+              </a>
+              <div class="px-[15px] py-[30px]">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-5">
+                    <figure>
+                      <img
+                        class="h-[3rem] w-[3rem]"
+                        src="../images/author-avatar.png"
+                        alt="author"
+                      />
+                    </figure>
+                    <div>
+                      <a class="font-medium text-granite-gray" href="#"
+                        >Jony bristow</a
+                      >
+                      <p class="text-spanish-gray">Admin</p>
+                    </div>
+                  </div>
+                  <time class="text-spanish-gray">10:30 AM</time>
+                </div>
+                <h3
+                  class="my-[2rem] text-3xl font-bold text-granite-gray hover:text-viridian-green"
+                >
+                  A good traveler has no fixed plans and is not intent or
+                  arriving.
+                </h3>
+                <a
+                  class="flex items-center justify-end gap-2 text-3xl font-semibold text-viridian-green hover:text-inherit"
+                  href="#"
+                  ><span>Read More</span>
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+              </div>
+            </div>
+            <!-- single Blog -->
+            <div class="shadow-lg">
+              <a class="relative" href="#">
+                <figure>
+                  <img src="../images/blog-3.jpg" alt="blogs" />
+                </figure>
+                <span
+                  class="absolute top-4 left-4 inline-flex flex-col items-center rounded-lg bg-mikado-yellow p-6 font-extrabold text-white-1"
+                >
+                  <ion-icon
+                    name="time-outline"
+                    class="text-3xl"
+                    role="img"
+                  ></ion-icon>
+                  <time>12 Days</time>
+                </span>
+              </a>
+              <div class="px-[15px] py-[30px]">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-5">
+                    <figure>
+                      <img
+                        class="h-[3rem] w-[3rem]"
+                        src="../images/author-avatar.png"
+                        alt="author"
+                      />
+                    </figure>
+                    <div>
+                      <a class="font-medium text-granite-gray" href="#"
+                        >Jony bristow</a
+                      >
+                      <p class="text-spanish-gray">Admin</p>
+                    </div>
+                  </div>
+                  <time class="text-spanish-gray">10:30 AM</time>
+                </div>
+                <h3
+                  class="my-[2rem] text-3xl font-bold text-granite-gray hover:text-viridian-green"
+                >
+                  A good traveler has no fixed plans and is not intent or
+                  arriving.
+                </h3>
+                <a
+                  class="flex items-center justify-end gap-2 text-3xl font-semibold text-viridian-green hover:text-inherit"
+                  href="#"
+                  ><span>Read More</span>
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="bg-oxford-blue bg-footer-bg bg-center py-[6rem] text-light-gray"
+      id="contact"
+    >
+      <div class="container mx-auto px-[15px]">
+        <!-- grid-container -->
+        <div
+          class="mb-[40px] grid gap-[3rem] mob:grid-cols-2 lap:grid-cols-[1fr_1fr_1fr_2fr]"
+        >
+          <!-- top destination -->
+          <ul>
+            <li>
+              <p class="mb-[15px] text-[2.4rem] font-semibold text-white-1">
+                Top destination
+              </p>
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#"
+                >Indonesia, Jakarta</a
+              >
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#"
+                >Maldives, Male</a
+              >
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#"
+                >Australia, Canberra</a
+              >
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#"
+                >Thailand, Bangkok</a
+              >
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#"
+                >Morocco, Rabat</a
+              >
+            </li>
+          </ul>
+          <!-- categories -->
+          <ul>
+            <li>
+              <p class="mb-[15px] text-[2.4rem] font-semibold text-white-1">
+                Categories
+              </p>
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#">Travel</a>
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#"
+                >Lifestyle</a
+              >
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#">Fashion</a>
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#"
+                >Education</a
+              >
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#"
+                >Food & Drink</a
+              >
+            </li>
+          </ul>
+          <!-- Quick links -->
+          <ul>
+            <li>
+              <p class="mb-[15px] text-[2.4rem] font-semibold text-white-1">
+                Quick links
+              </p>
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#">About</a>
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#">Contact</a>
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#">Tours</a>
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#">Booking</a>
+            </li>
+            <li>
+              <a class="block py-[5px] hover:text-white-1" href="#"
+                >Terms & Conditions</a
+              >
+            </li>
+          </ul>
+          <!-- forms -->
+          <ul>
+            <h3 class="mb-[15px] text-[2.4rem] font-semibold text-white-1">
+              Get a newsletter
+            </h3>
+            <p class="mb-[30px]">
+              For the latest deals and tips, travel no further than your inbox
+            </p>
+            <form action="">
+              <div
+                class="flex justify-between overflow-hidden rounded-lg bg-white-1 text-[1.6rem]"
+              >
+                <input
+                  class="inline-block grow p-[25px] text-jet outline-none"
+                  type="email"
+                  name="email"
+                  placeholder="Email address"
+                  id="email"
+                />
+                <button
+                  class="inline-block rounded-lg border-none bg-viridian-green p-[25px] font-semibold text-white-1 outline-none"
+                  type="submit"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </ul>
+        </div>
+        <div
+          class="flex flex-col items-center justify-between gap-[15px] tab:flex-row"
+        >
+          <h2 class="text-[3rem] font-semibold text-white-1">Tourest</h2>
+          <span>
+            &copy; 2022 <a class="underline" href="#">codewithrasel.</a> All
+            Rights Reserved
+          </span>
+          <div class="flex gap-3">
+            <a
+              class="block rounded-full bg-black-coral p-3 text-3xl transition duration-300 hover:bg-white-2 hover:text-blue-400"
+              href="#"
+              ><ion-icon class="block" name="logo-facebook"></ion-icon
+            ></a>
+            <a
+              class="block rounded-full bg-black-coral p-3 text-3xl transition duration-300 hover:bg-white-2 hover:text-blue-400"
+              href="#"
+              ><ion-icon class="block" name="logo-twitter"></ion-icon
+            ></a>
+            <a
+              class="bg-black-cora duration-300l block rounded-full p-3 text-3xl transition hover:bg-white-2 hover:text-orange-400"
+              href="#"
+              ><ion-icon class="block" name="logo-instagram"></ion-icon
+            ></a>
+            <a
+              class="bg-black-cora duration-300l block rounded-full p-3 text-3xl transition hover:bg-white-2 hover:text-blue-400"
+              href="#"
+              ><ion-icon class="block" name="logo-linkedin"></ion-icon
+            ></a>
+            <a
+              class="block rounded-full bg-black-coral p-3 text-3xl transition duration-300 hover:bg-white-2 hover:text-red-400"
+              href="#"
+              ><ion-icon class="block" name="logo-google"></ion-icon
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <!-- Custom JavaScript  -->
+  <script>
+    const nav = document.querySelector("#nav");
+    const header = document.querySelector("#header");
+    const bars = document.querySelector("#bars");
+    const handleBars = () => {
+      if (bars.name === "menu") {
+        bars.name = "close";
+        header.classList.remove("max-h-[88px]");
+        header.classList.add("max-h-screen");
+        nav.classList.remove("invisible", "opacity-0");
+        nav.classList.add("visible", "opacity-100");
+      } else {
+        bars.name = "menu";
+        header.classList.remove("max-h-screen");
+        header.classList.add("max-h-[88px]");
+        nav.classList.remove("visible", "opacity-100");
+        nav.classList.add("invisible", "opacity-0");
+      }
+    };
+  </script>
+  <!--todo ionIcons JavaScript -->
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+</html>
